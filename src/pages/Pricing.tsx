@@ -46,7 +46,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-12 mt-10">
       <h1 className="text-5xl font-bold text-center text-primary mb-4">Membership Plans</h1>
       <p className="mt-4 text-center text-gray-300 text-xl mb-12">
         Choose the perfect plan for your fitness journey
@@ -66,6 +66,13 @@ const Pricing = () => {
         </button>
         <span className={`text-lg ${isYearly ? 'text-primary' : 'text-gray-400'}`}>Yearly</span>
       </div>
+
+      {/* Savings Notice */}
+      {isYearly && (
+        <p className="text-center text-primary mt-5 mb-5 text-lg">
+          Save up to 20% with yearly plans!
+        </p>
+      )}
 
       {/* Pricing Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -109,13 +116,6 @@ const Pricing = () => {
           </div>
         ))}
       </div>
-
-      {/* Savings Notice */}
-      {isYearly && (
-        <p className="text-center text-primary mt-8 text-lg">
-          Save up to 20% with yearly plans!
-        </p>
-      )}
     </div>
   );
 };
