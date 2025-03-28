@@ -110,7 +110,7 @@ const Classes = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 overflow-visible mt-10">
+    <div className="max-w-7xl mx-auto px-4 py-12 overflow-visible pt-20">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -123,7 +123,7 @@ const Classes = () => {
       </motion.div>
 
       {/* Filter Tabs */}
-      <div className="flex justify-center space-x-4 mb-12">
+      <div className="flex flex-wrap gap-5 justify-center space-x-4 mb-12">
         {['all', 'beginner', 'intermediate', 'advanced'].map((tab) => (
           <button
             key={tab}
@@ -182,13 +182,14 @@ const Classes = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50"
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[1000]"
         >
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="bg-secondary rounded-2xl p-8 max-w-2xl w-full relative"
+            className="bg-secondary rounded-2xl p-6 md:p-10 w-full max-w-3xl h-[90vh] max-h-[90vh] overflow-y-auto relative flex flex-col"
           >
+            {/* Close Button */}
             <button
               className="absolute top-4 right-4 text-gray-400 hover:text-primary transition-colors duration-300"
               onClick={() => setSelectedClass(null)}
@@ -198,10 +199,12 @@ const Classes = () => {
               </svg>
             </button>
 
-            <h3 className="text-3xl font-bold text-primary mb-4">{selectedClass.name}</h3>
-            <p className="text-gray-300 mb-6">{selectedClass.longDesc}</p>
+            {/* Title */}
+            <h3 className="text-3xl font-bold text-primary mb-4 text-center">{selectedClass.name}</h3>
+            <p className="text-gray-300 mb-6 text-center">{selectedClass.longDesc}</p>
 
-            <div className="grid grid-cols-2 gap-4 mb-6">
+            {/* Class Info */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
               <div className="bg-black bg-opacity-30 p-4 rounded-lg">
                 <h4 className="text-primary font-semibold mb-2">Duration</h4>
                 <p className="text-gray-300">{selectedClass.duration}</p>
@@ -220,6 +223,7 @@ const Classes = () => {
               </div>
             </div>
 
+            {/* Required Equipment */}
             <div className="mb-6">
               <h4 className="text-xl font-semibold text-primary mb-3">Required Equipment:</h4>
               <div className="flex flex-wrap gap-2">
@@ -231,6 +235,7 @@ const Classes = () => {
               </div>
             </div>
 
+            {/* Benefits */}
             <div className="mb-6">
               <h4 className="text-xl font-semibold text-primary mb-3">Benefits:</h4>
               <ul className="space-y-2">
@@ -245,6 +250,7 @@ const Classes = () => {
               </ul>
             </div>
 
+            {/* Schedule & Instructor */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-300 mb-6">
               <div>
                 <h4 className="text-xl font-semibold text-primary mb-2">Schedule:</h4>
@@ -256,8 +262,9 @@ const Classes = () => {
               </div>
             </div>
 
+            {/* Join Button */}
             <button
-              className="mt-8 w-full py-4 px-8 bg-primary text-secondary rounded-lg font-bold hover:bg-accent transition-colors duration-300"
+              className="mt-auto w-full py-4 px-8 bg-primary text-secondary rounded-lg font-bold hover:bg-accent transition-colors duration-300"
               onClick={() => setSelectedClass(null)}
             >
               Join This Class
@@ -265,6 +272,7 @@ const Classes = () => {
           </motion.div>
         </motion.div>
       )}
+
     </div>
   );
 };

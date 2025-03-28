@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const Home = () => {
   return (
     <div className="relative">
@@ -31,12 +33,9 @@ const Home = () => {
                 >
                   Start Now
                 </a>
-                <a
-                  href="#"
-                  className="rounded-md bg-secondary px-8 py-3 text-lg font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-secondary transition duration-300"
-                >
+                <Link to={"/classes"} className="rounded-md bg-secondary px-8 py-3 text-lg font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-secondary transition duration-300">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

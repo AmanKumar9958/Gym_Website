@@ -46,7 +46,7 @@ const Pricing = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12 mt-10">
+    <div className="max-w-7xl mx-auto px-4 py-12 pt-20">
       <h1 className="text-5xl font-bold text-center text-primary mb-4">Membership Plans</h1>
       <p className="mt-4 text-center text-gray-300 text-xl mb-12">
         Choose the perfect plan for your fitness journey

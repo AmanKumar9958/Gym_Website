@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 const About = () => {
   return (
-    <div className="bg-black text-yellow-50 min-h-screen mt-10">
+    <div className="bg-black bg-opacity-50 text-yellow-50 min-h-screen pt-20">
       <div className="max-w-7xl mx-auto px-4 py-16">
         {/* Hero Section */}
         <motion.div 

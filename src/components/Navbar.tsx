@@ -16,7 +16,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-black shadow-lg fixed top-0 left-0 w-full z-[1000] mb-7"> {/* Increased z-index */}
+    <nav className=" shadow-lg fixed top-0 left-0 w-full z-[1000] mb-7"> {/* Increased z-index */}
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -33,7 +33,7 @@ const Navbar = () => {
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
                 className={({ isActive }) =>
-                  `text-sm font-medium transition-colors duration-200 ${
+                  `text-lg font-medium transition-colors duration-200 ${
                     isActive
                       ? "text-yellow-400 border-b-2 border-yellow-400"
                       : "text-gray-300 hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400"
@@ -57,7 +57,7 @@ const Navbar = () => {
 
       {/* Mobile Menu (Dropdown Below Button) */}
       <div
-        className={`md:hidden fixed top-16 left-0 w-full bg-black shadow-md z-[1000] transition-transform duration-300 ${
+        className={`md:hidden fixed top-16 left-3/4 w-1/4 rounded-xl bg-yellow-400 shadow-md z-[1000] transition-transform duration-300 ${
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
@@ -67,7 +67,7 @@ const Navbar = () => {
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
               onClick={closeMenu} // Close menu on click
-              className="text-xl font-semibold text-yellow-400 hover:text-gray-200 transition duration-200"
+              className="text-xl font-semibold text-black hover:text-gray-200 transition duration-200"
             >
               {item}
             </NavLink>
