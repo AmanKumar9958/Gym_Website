@@ -1,8 +1,30 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi"; // Menu icons
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Navbar = () => {
+
+  // Animation using GSAP
+  useGSAP(() => {
+    gsap.from(".logo", {
+      duration: 1,
+      opacity: 0,
+      y: -150,
+      ease: "power2.out",
+    })
+  })
+  useGSAP(() => {
+    gsap.from(".links", {
+      duration: 1,
+      opacity: 0,
+      y: -150,
+      stagger: 0.2,
+      ease: "power2.out",
+    })
+  })
+
   const [isOpen, setIsOpen] = useState(false);
 
   // Toggle menu function
@@ -21,7 +43,7 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <NavLink to="/" className="text-yellow-400 font-bold text-2xl">
+            <NavLink to="/" className="text-yellow-400 font-bold text-2xl logo">
               POWER GYM
             </NavLink>
           </div>
@@ -33,7 +55,7 @@ const Navbar = () => {
                 key={item}
                 to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
                 className={({ isActive }) =>
-                  `text-lg font-medium transition-colors duration-200 ${
+                  `text-lg font-medium transition-colors duration-200 links ${
                     isActive
                       ? "text-yellow-400 border-b-2 border-yellow-400"
                       : "text-gray-300 hover:text-yellow-400 hover:border-b-2 hover:border-yellow-400"
@@ -67,7 +89,7 @@ const Navbar = () => {
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
               onClick={closeMenu} // Close menu on click
-              className="text-xl font-semibold text-black hover:text-gray-200 transition duration-200"
+              className="text-xl font-semibold text-black hover:text-gray-200 transition duration-200 links"
             >
               {item}
             </NavLink>

@@ -1,6 +1,49 @@
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Home = () => {
+
+  // animation using GSAP..
+  useGSAP(() => {
+    gsap.from(".top-text", {
+      x: -1900,
+      delay: 1,
+      duration: 1,
+    })
+  })
+  useGSAP(() => {
+    gsap.from(".mid-text", {
+      x: 1900,
+      delay: 1,
+      duration: 1,
+    })
+  })
+  useGSAP(() => {
+    gsap.from(".bottom-text", {
+      scale: 0.2,
+      duration: 1,
+      delay: 1,
+      opacity: 0
+    })
+  })
+  useGSAP(() => {
+    gsap.from(".start", {
+      scale: 0.2,
+      duration: 1,
+      delay: 1,
+      opacity: 0
+    })
+  })
+  useGSAP(() => {
+    gsap.from(".learn", {
+      y: -90,
+      duration: 1,
+      delay: 1,
+      opacity: 0
+    })
+  })
+
   return (
     <div className="relative">
       {/* Hero Section */}
@@ -18,11 +61,13 @@ const Home = () => {
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary mb-8">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-primary mb-8 top-text">
                 TRANSFORM YOUR BODY
-                <span className="block text-white mt-2">TRANSFORM YOUR LIFE</span>
               </h1>
-              <p className="mt-3 max-w-md mx-auto text-xl text-gray-300 sm:text-2xl md:mt-5 md:max-w-3xl">
+              <h1 className="text-4xl sm:text-5xl md:text-5xl font-extrabold text-white mb-8 mid-text">
+                TRANSFORM YOUR LIFE
+              </h1>
+              <p className="mt-3 max-w-md mx-auto text-xl text-gray-300 sm:text-2xl md:mt-5 md:max-w-3xl bottom-text">
                 Join the ultimate fitness experience where strength meets dedication.
               </p>
               
@@ -31,10 +76,10 @@ const Home = () => {
                   href="#"
                   className="rounded-md bg-primary px-8 py-3 text-lg font-semibold text-secondary shadow-sm hover:bg-accent transition duration-300"
                 >
-                  Start Now
+                  <span className="start">Start Now</span>
                 </a>
                 <Link to={"/classes"} className="rounded-md bg-secondary px-8 py-3 text-lg font-semibold text-primary border-2 border-primary hover:bg-primary hover:text-secondary transition duration-300">
-                  Learn More
+                  <span className="learn">Learn More</span>
                 </Link>
               </div>
             </div>
