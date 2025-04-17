@@ -1,53 +1,40 @@
 import { Link } from "react-router-dom";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
 
   // animation using GSAP..
   useGSAP(() => {
-    gsap.from(".top-text", {
-      x: -1900,
-      delay: 1,
+    gsap.from(".top-text", { x: -1900, delay: 1, duration: 1 });
+    gsap.from(".mid-text", { x: 1900, delay: 1, duration: 1 });
+    gsap.from(".bottom-text", { scale: 0.2, opacity: 0, delay: 1, duration: 1 });
+    gsap.from(".start", { scale: 0.2, opacity: 0, delay: 1, duration: 1 });
+    gsap.from(".learn", { y: -90, opacity: 0, delay: 1, duration: 1 });
+
+    // ScrollTrigger animation for features
+    gsap.from(".feature", {
+      y: -100,
+      opacity: 0,
       duration: 1,
+      stagger: 0.3,
+      scrollTrigger: {
+        trigger: ".feature",
+        markers: true,
+        scrub: true,
+        start: "top 85%",
+        end: "bottom 40%",
+      }
     })
-  })
-  useGSAP(() => {
-    gsap.from(".mid-text", {
-      x: 1900,
-      delay: 1,
-      duration: 1,
-    })
-  })
-  useGSAP(() => {
-    gsap.from(".bottom-text", {
-      scale: 0.2,
-      duration: 1,
-      delay: 1,
-      opacity: 0
-    })
-  })
-  useGSAP(() => {
-    gsap.from(".start", {
-      scale: 0.2,
-      duration: 1,
-      delay: 1,
-      opacity: 0
-    })
-  })
-  useGSAP(() => {
-    gsap.from(".learn", {
-      y: -90,
-      duration: 1,
-      delay: 1,
-      opacity: 0
-    })
-  })
+
+  }, [])
 
   return (
     <div className="relative">
       {/* Hero Section */}
-      <div className="relative h-[90vh] bg-secondary overflow-hidden">
+      <div className="relative h-[150vh] bg-secondary overflow-hidden">
         {/* Background Image */}
         <div 
           className="absolute inset-0 bg-cover bg-center z-0"
@@ -91,15 +78,15 @@ const Home = () => {
       <div className="bg-secondary py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 border-2 border-primary rounded-lg">
+            <div className="text-center p-6 border-2 border-primary rounded-lg feature">
               <h3 className="text-xl font-bold text-primary mb-4">Expert Trainers</h3>
               <p className="text-gray-300">Professional guidance to help you achieve your fitness goals.</p>
             </div>
-            <div className="text-center p-6 border-2 border-primary rounded-lg">
+            <div className="text-center p-6 border-2 border-primary rounded-lg feature">
               <h3 className="text-xl font-bold text-primary mb-4">Modern Equipment</h3>
               <p className="text-gray-300">State-of-the-art facilities for optimal workout experience.</p>
             </div>
-            <div className="text-center p-6 border-2 border-primary rounded-lg">
+            <div className="text-center p-6 border-2 border-primary rounded-lg feature">
               <h3 className="text-xl font-bold text-primary mb-4">Flexible Hours</h3>
               <p className="text-gray-300">Open 24/7 to fit your busy schedule.</p>
             </div>
