@@ -1,35 +1,6 @@
 import { Link } from "react-router-dom";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 
 const Home = () => {
-
-  // animation using GSAP..
-  useGSAP(() => {
-    gsap.from(".top-text", { x: -1900, delay: 1, duration: 1 });
-    gsap.from(".mid-text", { x: 1900, delay: 1, duration: 1 });
-    gsap.from(".bottom-text", { scale: 0.2, opacity: 0, delay: 1, duration: 1 });
-    gsap.from(".start", { scale: 0.2, opacity: 0, delay: 1, duration: 1 });
-    gsap.from(".learn", { y: -90, opacity: 0, delay: 1, duration: 1 });
-
-    // ScrollTrigger animation for features
-    gsap.from(".feature", {
-      y: -100,
-      opacity: 0,
-      duration: 1,
-      stagger: 0.3,
-      scrollTrigger: {
-        trigger: ".feature",
-        markers: true,
-        scrub: true,
-        start: "top 85%",
-        end: "bottom 40%",
-      }
-    })
-
-  }, [])
 
   return (
     <div className="relative">

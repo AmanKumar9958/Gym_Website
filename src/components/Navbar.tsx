@@ -44,7 +44,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex items-center">
             <NavLink to="/" className="text-yellow-400 font-bold text-2xl logo">
-              POWER GYM
+              RepMax
             </NavLink>
           </div>
 
