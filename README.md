@@ -1,54 +1,85 @@
-# React + TypeScript + Vite
+# 🏋️‍♂️ RepMax - Local Gym Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to **RepMax**, a modern and fully responsive local gym website built to promote a fitness center and its services. This project showcases various membership plans, classes, and the facilities offered at RepMax Gym.
 
-Currently, two official plugins are available:
+## 💡 Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+RepMax is a sleek, user-friendly fitness website designed to attract gym members by showcasing services like:
 
-## Expanding the ESLint configuration
+- 🧘 Yoga & Meditation
+- 💪 Muscle Building
+- ⚖️ Weight Loss Program
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+It includes class descriptions, pricing plans, and gym features, built with a focus on performance and modern UI/UX.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📸 Website Preview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+> Below are some snapshots of the website:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+| Home Page | Classes Section | Pricing Plans |
+|----------|----------------|---------------|
+| ![Home](./screenshots/84a807a4-f4c1-47c6-8dc0-5d3806a86022.png) | ![Classes](./screenshots/7190ce5e-948d-4fda-bfef-86d8df013b1b.png) | ![Pricing](./screenshots/089e0667-4af3-4607-92fc-2b76618e5b05.png) |
+
+| About Section | Equipment |
+|---------------|-----------|
+| ![About](./screenshots/211aec61-72e5-4023-9243-74fd03161fa5.png) | ![Equipment](./screenshots/00aaa93d-1d8a-4915-a44b-82bd3dc15c6f.png) |
+
+---
+
+## 🔥 Classes Offered
+
+### 🧘 Yoga & Meditation
+- Duration: 90 minutes
+- Burn: 200–300 calories
+- Includes: Expert yoga instructors, meditation, flexibility training, weekly workshops
+
+### 💪 Muscle Building
+- Duration: 60 minutes
+- Burn: 400–600 calories
+- Includes: Personal trainer, custom workout plans, nutrition guidance, supplement advice
+
+### ⚖️ Weight Loss Program
+- Duration: 90 minutes
+- Burn: 500–700 calories
+- Includes: Cardio, HIIT training, diet planning, body composition analysis, group support
+
+---
+
+## 💲 Membership Pricing
+
+| Plan               | Price (Monthly) | Key Features |
+|--------------------|-----------------|--------------|
+| **Yoga Classes**   | $49.99          | Meditation, flexibility, workshops |
+| **Muscle Building**| $69.99          | Custom plans, nutrition & supplements |
+| **Weight Loss**    | $59.99          | HIIT, diet planning, cardio sessions |
+
+> 🗓 Yearly plans available at discounted rates (details on website).
+
+---
+
+## 🏆 Why Choose RepMax?
+
+- ✅ **Expert Trainers** – 10+ years of experience
+- ✅ **Modern Equipment** – $1M+ invested
+- ✅ **Proven Results** – 1000+ transformations
+- ✅ **Flexible Hours** – Open 24/7
+
+---
+
+## 🚀 Technologies Used
+
+- ReactJS
+- Tailwind CSS
+
+---
+
+## 🚀 Getting Started
+
+To run the project locally:
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/AmanKumar9958/Gym_Website.git
+   cd Gym_Website
