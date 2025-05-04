@@ -20,11 +20,7 @@ It includes class descriptions, pricing plans, and gym features, built with a fo
 
 | Home Page | Classes Section | Pricing Plans |
 |----------|----------------|---------------|
-| ![Home](./screenshots/84a807a4-f4c1-47c6-8dc0-5d3806a86022.png) | ![Classes](./screenshots/7190ce5e-948d-4fda-bfef-86d8df013b1b.png) | ![Pricing](./screenshots/089e0667-4af3-4607-92fc-2b76618e5b05.png) |
-
-| About Section | Equipment |
-|---------------|-----------|
-| ![About](./screenshots/211aec61-72e5-4023-9243-74fd03161fa5.png) | ![Equipment](./screenshots/00aaa93d-1d8a-4915-a44b-82bd3dc15c6f.png) |
+| ![Home](ss1.png) | ![Classes](ss2.png) | ![Pricing](ss3.png) |
 
 ---
 
