@@ -1,5 +1,7 @@
 # 🏋️‍♂️ RepMax - Local Gym Website
 
+![Home](ss1.png)
+
 Welcome to **RepMax**, a modern and fully responsive local gym website built to promote a fitness center and its services. This project showcases various membership plans, classes, and the facilities offered at RepMax Gym.
 
 ## 💡 Overview
