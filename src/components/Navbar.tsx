@@ -1,20 +1,19 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi"; // Menu icons
+import { FiMenu, FiX } from "react-icons/fi";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const Navbar = () => {
-
-  // Animation using GSAP
+  // GSAP Animations
   useGSAP(() => {
     gsap.from(".logo", {
       duration: 1,
       opacity: 0,
       y: -150,
       ease: "power2.out",
-    })
-  })
+    });
+  });
   useGSAP(() => {
     gsap.from(".links", {
       duration: 1,
@@ -22,38 +21,29 @@ const Navbar = () => {
       y: -150,
       stagger: 0.2,
       ease: "power2.out",
-    })
-  })
+    });
+  });
 
   const [isOpen, setIsOpen] = useState(false);
 
-  // Toggle menu function
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  // Close menu when a link is clicked
-  const closeMenu = () => {
-    setIsOpen(false);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className=" shadow-lg fixed top-0 left-0 w-full z-[1000] mb-7"> {/* Increased z-index */}
+    <nav className="shadow-lg fixed top-0 left-0 w-full z-[1000] mb-7 bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center">
-            <NavLink to="/" className="text-yellow-400 font-bold text-2xl logo">
-              RepMax
-            </NavLink>
-          </div>
+          <NavLink to="/" className="text-yellow-400 font-bold text-2xl logo">
+            RepMax
+          </NavLink>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {["Home", "About", "Classes", "Pricing"].map((item) => (
               <NavLink
                 key={item}
-                to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
+                to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
                 className={({ isActive }) =>
                   `text-lg font-medium transition-colors duration-200 links ${
                     isActive
@@ -70,25 +60,25 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="md:hidden text-yellow-400 text-3xl focus:outline-none z-[1100]" // Increased z-index
+            className="md:hidden text-yellow-400 text-3xl focus:outline-none z-[1100]"
           >
             {isOpen ? <FiX /> : <FiMenu />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu (Dropdown Below Button) */}
+      {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-16 left-3/4 w-1/4 rounded-xl bg-yellow-400 shadow-md z-[1000] transition-transform duration-300 ${
+        className={`md:hidden fixed top-16 left-0 w-full bg-yellow-400 shadow-md z-[1000] transition-all duration-300 ${
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center py-6 space-y-6 bg-red-400">
+        <div className="flex flex-col items-center py-6 space-y-6">
           {["Home", "About", "Classes", "Pricing"].map((item) => (
             <NavLink
               key={item}
-              to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
-              onClick={closeMenu} // Close menu on click
+              to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
+              onClick={closeMenu}
               className="text-xl font-semibold text-gray-900 hover:text-white transition duration-200 links"
             >
               {item}
