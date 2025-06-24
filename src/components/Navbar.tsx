@@ -25,12 +25,11 @@ const Navbar = () => {
   });
 
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
 
   return (
-    <nav className="shadow-lg fixed top-0 left-0 w-full z-[1000] mb-7 bg-black">
+    <nav className="shadow-lg fixed top-0 left-0 w-full z-[1000] bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -67,9 +66,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* ✅ Mobile Menu Dropdown - Fixed Layout */}
       <div
-        className={`md:hidden fixed top-16 left-0 w-full bg-yellow-400 shadow-md z-[1000] transition-all duration-300 ${
+        className={`md:hidden fixed top-16 left-0 w-full z-[999] bg-yellow-400 transition-all duration-300 ease-in-out ${
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
@@ -79,7 +78,7 @@ const Navbar = () => {
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`}
               onClick={closeMenu}
-              className="text-xl font-semibold text-gray-900 hover:text-white transition duration-200 links"
+              className="text-xl font-semibold text-black hover:text-white transition duration-200"
             >
               {item}
             </NavLink>
