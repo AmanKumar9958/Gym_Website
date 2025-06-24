@@ -89,7 +89,7 @@ const Navbar = () => {
               key={item}
               to={item === "Home" ? "/" : `/${item.toLowerCase()}`} // Fix Home route
               onClick={closeMenu} // Close menu on click
-              className="text-xl font-semibold text-black hover:text-gray-200 transition duration-200 links"
+              className="text-xl font-semibold text-gray-900 hover:text-white transition duration-200 links"
             >
               {item}
             </NavLink>
