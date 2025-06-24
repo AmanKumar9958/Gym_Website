@@ -83,7 +83,7 @@ const Navbar = () => {
           isOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col items-center py-6 space-y-6">
+        <div className="flex flex-col items-center py-6 space-y-6 bg-red-400">
           {["Home", "About", "Classes", "Pricing"].map((item) => (
             <NavLink
               key={item}
