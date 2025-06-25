@@ -6,8 +6,8 @@ const Pricing = () => {
   const plans = [
     {
       name: "Yoga Classes",
-      monthlyPrice: 49.99,
-      yearlyPrice: 499.99,
+      monthlyPrice: 600,
+      yearlyPrice: 6900,
       features: [
         "Expert yoga instructors",
         "All levels welcome",
@@ -19,8 +19,8 @@ const Pricing = () => {
     },
     {
       name: "Muscle Building",
-      monthlyPrice: 69.99,
-      yearlyPrice: 699.99,
+      monthlyPrice: 700,
+      yearlyPrice: 8000,
       features: [
         "Personal trainer",
         "Custom workout plans",
@@ -32,8 +32,8 @@ const Pricing = () => {
     },
     {
       name: "Weight Loss Program",
-      monthlyPrice: 59.99,
-      yearlyPrice: 599.99,
+      monthlyPrice: 600,
+      yearlyPrice: 6900,
       features: [
         "Cardio sessions",
         "HIIT training",
@@ -69,7 +69,7 @@ const Pricing = () => {
 
       {/* Savings Notice */}
       {isYearly && (
-        <p className="text-center text-primary mt-5 mb-5 text-lg">
+        <p className="text-center text-primary mt-2 mb-3 text-lg">
           Save up to 20% with yearly plans!
         </p>
       )}
@@ -83,7 +83,7 @@ const Pricing = () => {
           >
             <h3 className="text-2xl font-bold text-primary mb-4">{plan.name}</h3>
             <div className="text-4xl font-bold text-white mb-8">
-              ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
+              ₹{isYearly ? plan.yearlyPrice : plan.monthlyPrice}
               <span className="text-lg text-gray-400">/{isYearly ? 'year' : 'month'}</span>
             </div>
 
